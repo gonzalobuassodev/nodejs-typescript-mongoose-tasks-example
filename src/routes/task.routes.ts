@@ -10,7 +10,7 @@ import { InterfaceTask, TaskModel } from '../model/task.model';
 export const router = express.Router();
 
 router.get(
-  '/alltask',
+  '/getalltask',
   TokenValidation,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -22,7 +22,7 @@ router.get(
 );
 
 router.get(
-  '/task/:id',
+  '/gettask/:id',
   TokenValidation,
   async (req: Request, res: Response, next: NextFunction) => {
     await getTask(req, res);
@@ -30,7 +30,7 @@ router.get(
 );
 
 router.post(
-  '/task',
+  '/createtask',
   TokenValidation,
   async (req: Request, res: Response, next: NextFunction) => {
     await createTask(req, res);
